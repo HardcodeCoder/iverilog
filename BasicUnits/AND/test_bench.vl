@@ -1,0 +1,27 @@
+module and_main;
+reg a,b;
+wire x;
+
+initial begin
+$dumpfile("And.vcd");
+$dumpvars(1, and_main);
+end
+
+AND_Gate a1(a,b,x);
+always @ (a or b) begin
+
+$monitor("time = %d A = %d B = %d X = %d \n", $time, a,b, x);
+end
+
+initial begin
+a=0;b=0;
+#1
+a=0;b=1;
+#1
+a=1;b=0;
+#1
+a=1;b=1;
+#1
+$finish;
+end
+endmodule

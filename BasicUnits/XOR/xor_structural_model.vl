@@ -1,0 +1,5 @@
+module XOR_Gate(a,b,x);
+input a,b;
+output x;
+xor a1(x,a,b);
+endmodule
